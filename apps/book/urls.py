@@ -6,7 +6,7 @@ from apps.book.utils import OptionalSlashRouter
 
 router = OptionalSlashRouter()
 
-router.register(r'book', views.EmployeeViewSet, basename='book')
+router.register(r'book', views.BookViewSet, basename='book')
 
 urlpatterns = [
     path(r'book/', include(router.urls)),

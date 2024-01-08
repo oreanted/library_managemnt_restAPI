@@ -90,11 +90,11 @@ WSGI_APPLICATION = 'library_management_api.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'BookAPIDB',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'library_data',
         'HOST': 'localhost',
-        'USER': 'root',
-        'PASSWORD': 'lucifer9088'
+        'USER': 'postgres',
+        'PASSWORD': 'XDuce@123'
     }
 }
 

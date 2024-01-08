@@ -19,15 +19,15 @@ from drf_yasg import openapi
 from drf_yasg.views import get_schema_view
 from rest_framework import permissions
 from library_management_api.settings import DEBUG
+
 # Define swagger api constant
 API_VERSION = "v1"
 API_VERSION_URL = "api/" + API_VERSION + "/"
 API_DESCRIPTION = 'library_management Api Documentation'
 
-
 schema_view = get_schema_view(
     openapi.Info(
-        title="Employee_management API Document",
+        title="library_management API Document",
         default_version=API_VERSION,
         description=API_DESCRIPTION,
     ),

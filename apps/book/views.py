@@ -8,7 +8,7 @@ from apps.book.models import BookData
 
 
 # Create your views here.
-class EmployeeViewSet(CustomModelViewSet):
+class BookViewSet(CustomModelViewSet):
     """
     This photo view-set is used for upload photo
     Note - this api is form data api so check this api only postman
@@ -21,7 +21,7 @@ class EmployeeViewSet(CustomModelViewSet):
 
     def create(self, request, *args, **kwargs):
         """
-        To add Employee Data -
+        To add Book Data -
         Note - this api is form data api so check this api only postman
         :param request: wsgi request
         :param args: None
@@ -33,7 +33,7 @@ class EmployeeViewSet(CustomModelViewSet):
             serializer.save()
             # return success response
             response = custom_response(
-                status=status.HTTP_201_CREATED, detail=None,
+                status=status.HTTP_201_CREATED, detail="data has been saved successfully",
                 data=None
             )
             return response
@@ -54,7 +54,7 @@ class EmployeeViewSet(CustomModelViewSet):
 
     def list(self, request, *args, **kwargs):
         """
-        List of Video instance
+        List of BOOK instance
         :param request: wsgi request
         :param args: argument list
         :param kwargs: keyword argument object
@@ -69,10 +69,10 @@ class EmployeeViewSet(CustomModelViewSet):
 
     def update(self, request, *args, **kwargs):
         """
-        To update video data
+        To update book data
         Note - this api is form data api so check this api only postman
         :param request: wsgi request put
-        :param args: video id
+        :param args: Book id
         :param kwargs: None
         :return: success message or error
         """
@@ -92,11 +92,11 @@ class EmployeeViewSet(CustomModelViewSet):
 
     def destroy(self, request, *args, **kwargs):
         """
-        To delete video
+        To delete Book_data
         :param request: wsgi request
         :param args: allows for any number of optional positional arguments (parameters), which will be assigned to a
         tuple named args
-        :param kwargs: video id required
+        :param kwargs: Book id required
         :return: Json Response
         """
         main_video_obj = self.get_object()

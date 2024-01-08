@@ -14,11 +14,11 @@ class BookSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
         """
-        Create photo instance and update respective response
+        Create book instance and update respective response
         :param validated_data:
-        :return: photo instance
+        :return: book instance
         """
-        # save employee instance
+        # save Book instance
         book_instance = BookData.objects.create(
             **validated_data
         )
@@ -26,10 +26,10 @@ class BookSerializer(serializers.ModelSerializer):
 
     def update(self, instance, validated_data):
         """
-        Update album obj
-        :param instance: album instance
+        Update book_data obj
+        :param instance: book instance
         :param validated_data: post data
-        :return: album instance
+        :return: Book_data instance
         """
         instance.title = validated_data.get('name', instance.title)
         instance.description = validated_data.get('auther_name', instance.description)
